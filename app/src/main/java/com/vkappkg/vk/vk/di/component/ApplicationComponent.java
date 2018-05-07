@@ -6,6 +6,7 @@ import com.vkappkg.vk.vk.di.module.ManagerModule;
 import com.vkappkg.vk.vk.di.module.RestModule;
 import com.vkappkg.vk.vk.ui.activity.BaseActivity;
 import com.vkappkg.vk.vk.ui.activity.MainActivity;
+import com.vkappkg.vk.vk.ui.fragment.NewsFeedFragment;
 
 import javax.inject.Singleton;
 
@@ -18,4 +19,7 @@ public interface ApplicationComponent {
     //activities
     void inject(BaseActivity activity);
     void inject(MainActivity activity);
+
+    //fragment
+    void inject(NewsFeedFragment fragment);
 }

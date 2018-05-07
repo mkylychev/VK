@@ -2,6 +2,7 @@ package com.vkappkg.vk.vk.di.module;
 
 
 import com.vkappkg.vk.vk.rest.RestClient;
+import com.vkappkg.vk.vk.rest.api.WallApi;
 
 import javax.inject.Singleton;
 
@@ -20,5 +21,11 @@ public class RestModule {
     @Provides
     public RestClient provideRestClient(){
         return mRestClient;
+    }
+
+    @Singleton
+    @Provides
+    public WallApi provideWallApi(){
+        return mRestClient.createService(WallApi.class);
     }
 }
