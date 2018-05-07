@@ -18,6 +18,7 @@ import com.vkappkg.vk.vk.R;
 import com.vkappkg.vk.vk.consts.ApiConstants;
 import com.vkappkg.vk.vk.mvp.presenter.MainPresenter;
 import com.vkappkg.vk.vk.mvp.view.MainView;
+import com.vkappkg.vk.vk.ui.fragment.NewsFeedFragment;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -65,6 +66,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     public void signedId() {
         Toast.makeText(this, "Current user id: " + CurrentUser.getId(),Toast.LENGTH_SHORT).show();
+        setContent(new NewsFeedFragment());
     }
 
 }
