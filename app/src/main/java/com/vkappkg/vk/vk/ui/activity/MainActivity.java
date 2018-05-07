@@ -14,6 +14,7 @@ import com.vk.sdk.VKSdk;
 import com.vk.sdk.api.VKError;
 import com.vk.sdk.util.VKUtil;
 import com.vkappkg.vk.vk.CurrentUser;
+import com.vkappkg.vk.vk.MyApplication;
 import com.vkappkg.vk.vk.R;
 import com.vkappkg.vk.vk.consts.ApiConstants;
 import com.vkappkg.vk.vk.mvp.presenter.MainPresenter;
@@ -31,7 +32,7 @@ public class MainActivity extends BaseActivity implements MainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        MyApplication.getsApplicationCopmonent().inject(this);
         mPresenter.checkAuth();
     }
 
