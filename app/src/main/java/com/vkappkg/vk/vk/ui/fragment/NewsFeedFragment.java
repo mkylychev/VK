@@ -15,8 +15,11 @@ import com.vkappkg.vk.vk.CurrentUser;
 import com.vkappkg.vk.vk.MyApplication;
 import com.vkappkg.vk.vk.R;
 import com.vkappkg.vk.vk.common.BaseAdapter;
+import com.vkappkg.vk.vk.common.utils.VkListHelper;
 import com.vkappkg.vk.vk.model.WallItem;
+import com.vkappkg.vk.vk.model.view.BaseViewModel;
 import com.vkappkg.vk.vk.model.view.NewsFeedItemBodyViewModel;
+import com.vkappkg.vk.vk.model.view.NewsItemHeaderViewModel;
 import com.vkappkg.vk.vk.rest.api.WallApi;
 import com.vkappkg.vk.vk.rest.model.request.WallGetRequestModel;
 import com.vkappkg.vk.vk.rest.model.response.BaseItemResponse;
@@ -61,9 +64,11 @@ public class NewsFeedFragment extends BaseFragment {
         mWallApi.get(new WallGetRequestModel(-86529522).toMap()).enqueue(new Callback<WallGetResponse>() {
             @Override
             public void onResponse(Call<WallGetResponse> call, Response<WallGetResponse> response) {
+                List<WallItem> wallItems = VkListHelper.getWallList(response.body().response);
+                List<BaseViewModel> list = new ArrayList<>();
 
-                List<NewsFeedItemBodyViewModel> list= new ArrayList<>();
-                for (WallItem item: response.body().response.getItems()){
+                for (WallItem item : wallItems){
+                    list.add(new NewsItemHeaderViewModel(item));
                     list.add(new NewsFeedItemBodyViewModel(item));
                 }
 
