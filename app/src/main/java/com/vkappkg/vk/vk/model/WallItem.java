@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.vkappkg.vk.vk.model.attachment.ApiAttachment;
 
 public class WallItem {
 
@@ -37,7 +38,7 @@ public class WallItem {
     private Integer canPin;
     @SerializedName("attachments")
     @Expose
-    private List<Attachment> attachments = null;
+    private List<ApiAttachment> apiAttachments = null;
 
     @SerializedName("copy_history")
     @Expose
@@ -123,12 +124,12 @@ public class WallItem {
         this.canPin = canPin;
     }
 
-    public List<Attachment> getAttachments() {
-        return attachments;
+    public List<ApiAttachment> getApiAttachments() {
+        return apiAttachments;
     }
 
-    public void setAttachments(List<Attachment> attachments) {
-        this.attachments = attachments;
+    public void setApiAttachments(List<ApiAttachment> apiAttachments) {
+        this.apiAttachments = apiAttachments;
     }
 
     public PostSource getPostSource() {

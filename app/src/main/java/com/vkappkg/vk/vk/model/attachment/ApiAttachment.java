@@ -1,10 +1,11 @@
 
-package com.vkappkg.vk.vk.model;
+package com.vkappkg.vk.vk.model.attachment;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.vkappkg.vk.vk.model.Photo;
 
-public class Attachment {
+public class ApiAttachment {
 
     @SerializedName("type")
     @Expose
