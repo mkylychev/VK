@@ -9,8 +9,9 @@ import com.vkappkg.vk.vk.model.attachment.ApiAttachment;
 
 public class WallItem {
 
-    public String senderName;
-    public String senderPhoto;
+    private String senderName;
+    private String senderPhoto;
+    private String attachmentsString;
 
     @SerializedName("id")
     @Expose
@@ -192,6 +193,16 @@ public class WallItem {
     public boolean haveSharedRepost(){
         return copyHistory.size() > 0;
     }
+
+    public String getAttachmentsString() {
+        return attachmentsString;
+    }
+
+    public void setAttachmentsString(String attachmentsString) {
+        this.attachmentsString = attachmentsString;
+    }
+
+
 
     public WallItem getSharedRepost(){
         if(haveSharedRepost()){

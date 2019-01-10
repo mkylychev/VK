@@ -20,6 +20,10 @@ public class VkListHelper {
                 Owner repostSender = response.getSenders(wallItem.getSharedRepost().getFromId());
                 wallItem.getSharedRepost().setSenderName(repostSender.getFullName());
                 wallItem.getSharedRepost().setSenderPhoto(repostSender.getPhoto());
+
+                wallItem.getSharedRepost().setAttachmentsString(Utils.convertAttachmentsToFontIcons(
+                        wallItem.getSharedRepost().getApiAttachments()));
+
             }
         }
         return wallItems;

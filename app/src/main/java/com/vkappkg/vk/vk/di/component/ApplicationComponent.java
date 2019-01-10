@@ -7,6 +7,7 @@ import com.vkappkg.vk.vk.di.module.RestModule;
 import com.vkappkg.vk.vk.ui.activity.BaseActivity;
 import com.vkappkg.vk.vk.ui.activity.MainActivity;
 import com.vkappkg.vk.vk.ui.fragment.NewsFeedFragment;
+import com.vkappkg.vk.vk.ui.holder.NewsItemBodyHolder;
 
 import javax.inject.Singleton;
 
@@ -22,4 +23,8 @@ public interface ApplicationComponent {
 
     //fragment
     void inject(NewsFeedFragment fragment);
+
+
+    //holders
+    void inject(NewsItemBodyHolder holder);
 }
